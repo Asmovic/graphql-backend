@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:14
+    container_name: cashtoken-db
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=asmovic
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=cashtoken-dashboard
+
+volumes:
+  postgres:
+    name: cashtoken-dashboard

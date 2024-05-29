@@ -1,0 +1,33 @@
+type WinHistory {
+  id: Int!
+  status: String!
+  reference: String!
+  amount: Int!
+  cashtokenId: String!
+}
+
+input CreateWinHistoryInput {
+  status: String!
+  reference: String!
+  amount: Int!
+  cashtokenId: String!
+}
+
+input UpdateWinHistoryInput {
+  id: Int!
+  status: String!
+  reference: String!
+  amount: Int!
+  cashtokenId: String!
+}
+
+type Query {
+  winHistorys: [WinHistory]!
+  winHistory(id: Int!): WinHistory
+}
+
+type Mutation {
+  createWinHistory(createWinHistoryInput: CreateWinHistoryInput!): WinHistory!
+  updateWinHistory(updateWinHistoryInput: UpdateWinHistoryInput!): WinHistory!
+  removeWinHistory(id: Int!): WinHistory
+}
