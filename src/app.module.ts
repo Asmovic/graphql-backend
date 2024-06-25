@@ -12,7 +12,7 @@ import { WinHistoryModule } from './win-history/win-history.module';
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      playground: true, // Set to false in production by default
+      playground: false,
       typePaths: ['./**/*.graphql'],
       definitions: {
         path: join(process.cwd(), 'src/types/graphql.ts'),
